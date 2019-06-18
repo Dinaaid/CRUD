@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" class="ion-align-items-center">
+          <ion-title class="ion-align-items-center">
+            Add New Member
+          </ion-title>
+        </ion-col>
+        <ion-col size="6">
+          <ion-searchbar placeholder="Search.."></ion-searchbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-grid>
+   <ion-row>
+     <ion-col size="6" offset="3"> 
+       <ion-card>
+     <ion-card-header>
+            <ion-item >
+              <ion-label position="floating"> Full Name </ion-label>
+              <ion-input type="name" 
+              #newMember 
+              (keyup.enter)="addMembers(newMember.value)"
+              [(ngModel)]="newMemberX">
+              </ion-input>
+            </ion-item>
+           <ion-item>
+              <ion-label position="floating"> Age</ion-label>
+              <ion-input type="number"
+              #Age
+              (keyup.enter)="addMembers(Age.value)"
+              [(ngModel)]="newMemberY">
+              </ion-input>
+           </ion-item>
+             
+  
+            <ion-button  color="primary" 
+          (click)="addMembers(newMember.value)">Add In List</ion-button>
+      </ion-card-header>
+     <ion-card-content>
+          <ion-list>
+              <ion-item *ngFor="let member of members">
+                <ion-label  >{{member}}</ion-label>
+                <ion-button 
+                color="danger" 
+                >
+                X</ion-button>
+              </ion-item>
+       </ion-list>
+     </ion-card-content>
+    </ion-card>
+     </ion-col>
+   </ion-row>
+ </ion-grid>
+</ion-content>
