@@ -11,8 +11,8 @@ export class HomePage {
   // ages: number[] = [ 50, 21, 5]; 
   all: any[] = [];
   members = [{
-    firstName: '',
-    age: ''
+    firstName: '11',
+    age: '1'
   }];
 
   newMemberX= '';
@@ -42,9 +42,10 @@ export class HomePage {
       // alert('lw sm7t aktb !');
       return;
     } else {
-      
-      // this.members.push(newName);
-      this.members.push();
+      this.members.push({
+        firstName: this.newMemberX,
+        age: this.newMemberY
+      });
       this.newMemberX = '';
       this.newMemberY = '';
     }
